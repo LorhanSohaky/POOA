@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
 class AbstractWriter(ABC):
-    def __init__(self, output_filename):
-        self.output_filename = output_filename
+    def __init__(self):
+        pass
 
     @abstractmethod
-    def write_file(self):
+    def write_file(self,output_filename, list_news):
         raise NotImplementedError()

@@ -20,16 +20,25 @@ output_options = {
     'xml': XMLWriter
 }
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--sites', help='List of available sites',  nargs='+', choices=site_options.keys(), required=True)
-parser.add_argument('--output-type', help='Output type', choices=output_options.keys(), required=True)
-args = parser.parse_args()
-sites = args.sites
-output_type = args.output_type
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--sites', help='List of available sites',  nargs='+', choices=site_options.keys(), required=True)
+    parser.add_argument('--output-type', help='Output type', choices=output_options.keys(), required=True)
+    args = parser.parse_args()
+    return args
 
-writer = output_options[output_type]()
+def main():
+    args = parse_args()
+    sites = args.sites
+    output_type = args.output_type
 
-for site in sites:
-    extractor = site_options[site]()
-    list_news = extractor.extract_news()
-    writer.write_file(site ,list_news)
+    writer = output_options[output_type]()
+
+    for site in sites:
+        extractor = site_options[site]()
+        list_news = extractor.extract_news()
+        writer.write_file(site ,list_news)
+
+
+if __name__ == "__main__":
+    main()

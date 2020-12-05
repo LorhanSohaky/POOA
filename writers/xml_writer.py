@@ -1,5 +1,3 @@
-import xml.etree.ElementTree as ET
-
 from .abstract_writer import AbstractWriter
 
 class XMLWriter(AbstractWriter):

@@ -1,8 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
-from .abstract_news_extractor import AbstractNewsExtractor
 from news import News
+from .abstract_news_extractor import AbstractNewsExtractor
 
 class G1NewsExtractor(AbstractNewsExtractor):
     def __init__(self):

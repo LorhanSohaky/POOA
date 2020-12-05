@@ -1,7 +1,7 @@
 [[source]]
-url = "https://pypi.python.org/simple"
+url = "https://github.com/LorhanSohaky/POOA"
 verify_ssl = true
-name = "pypi"
+name = "web-scrapper"
 
 [packages]
 requests = "~=2.25"

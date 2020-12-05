@@ -1,0 +1,2 @@
+from .g1_news_extractor import G1NewsExtractor
+from .site_dc_news_extractor import SiteDCNewsExtractor

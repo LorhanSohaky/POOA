@@ -2,8 +2,11 @@
 # -*- coding: utf-8 -*-
 import argparse
 
-from extractors import G1NewsExtractor, SiteDCNewsExtractor
-from writers import CSVWriter
+from extractors.g1_news_extractor import G1NewsExtractor
+from extractors.site_dc_news_extractor import SiteDCNewsExtractor
+
+from writers.csv_writer import CSVWriter
+from writers.json_writer import JSONWriter
 
 site_options = {
     'g1':G1NewsExtractor,
@@ -11,7 +14,8 @@ site_options = {
 }
 
 output_options = {
-    'csv':CSVWriter
+    'csv':CSVWriter,
+    'json':JSONWriter
 }
 
 parser = argparse.ArgumentParser()

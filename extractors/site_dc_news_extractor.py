@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from .abstract_news_extractor import AbstractNewsExtractor
 from news import News
 
+# Option to don't shows the browser
 os.environ['MOZ_HEADLESS'] = '1'
 
 class SiteDCNewsExtractor(AbstractNewsExtractor):
@@ -19,6 +20,8 @@ class SiteDCNewsExtractor(AbstractNewsExtractor):
         driver.get(self.url)
 
         buttonMore = driver.find_element(By.XPATH, '//button[text()="Carregar mais"]')
+
+        # Click while has more news
         while buttonMore.is_enabled():
             buttonMore.click()
             sleep(0.01)

@@ -7,6 +7,7 @@ from extractors.site_dc_news_extractor import SiteDCNewsExtractor
 
 from writers.csv_writer import CSVWriter
 from writers.json_writer import JSONWriter
+from writers.xml_writer import XMLWriter
 
 site_options = {
     'g1':G1NewsExtractor,
@@ -15,7 +16,8 @@ site_options = {
 
 output_options = {
     'csv':CSVWriter,
-    'json':JSONWriter
+    'json':JSONWriter,
+    'xml': XMLWriter
 }
 
 parser = argparse.ArgumentParser()

@@ -1,8 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
-from .abstract_news_extractor import AbstractNewsExtractor
 from news import News
+from .abstract_news_extractor import AbstractNewsExtractor
+
 
 class EstadaoNewsExtractor(AbstractNewsExtractor):
     def __init__(self):
@@ -14,9 +15,9 @@ class EstadaoNewsExtractor(AbstractNewsExtractor):
         soup = BeautifulSoup(html_text, 'html.parser')
 
         for item in soup.find_all('h3','title'):
-            for abacaxi in item.find_all('a'):
-                title = abacaxi.get('title')
-                url = abacaxi.get('href')
+            for item_filho in item.find_all('a'):
+                title = item_filho.get('title')
+                url = item_filho.get('href')
                 news.append(News(title,url))
 
         return news

@@ -4,6 +4,9 @@ import argparse
 
 from extractors.g1_news_extractor import G1NewsExtractor
 from extractors.site_dc_news_extractor import SiteDCNewsExtractor
+from extractors.estadao_news_extractor import EstadaoNewsExtractor
+from extractors.folha_news_extractor import FolhaNewsExtractor
+
 
 from writers.csv_writer import CSVWriter
 from writers.json_writer import JSONWriter
@@ -11,7 +14,10 @@ from writers.xml_writer import XMLWriter
 
 site_options = {
     'g1':G1NewsExtractor,
-    'site-dc':SiteDCNewsExtractor
+    'site-dc':SiteDCNewsExtractor,
+    'folha':FolhaNewsExtractor,
+    'estadao':EstadaoNewsExtractor
+
 }
 
 output_options = {

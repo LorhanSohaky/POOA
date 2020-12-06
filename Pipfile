@@ -1,12 +1,12 @@
 [[source]]
-url = "https://github.com/LorhanSohaky/POOA"
+url = "https://pypi.python.org/simple"
 verify_ssl = true
-name = "web-scrapper"
+name = "pypi"
 
 [packages]
-requests = "~=2.25"
-beautifulsoup4 = "~=4.9"
-selenium = "~=3.141"
+beautifulsoup4 = "~=4.9.3"
+requests = "~=2.25.0"
+selenium = "~=3.141.0"
 
 [dev-packages]
 
